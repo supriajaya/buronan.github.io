@@ -215,13 +215,35 @@
   }
 </script>
 
-
 <article style="max-width: 300px; margin: 10px auto; padding: 10px; background: white; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); font-size: 14px; line-height: 1.5; color: black;">
   <h3 style="margin-top: 0;">Tentang Pelaku</h3>
   <p>UJANG CHAERUDIN diduga terlibat dalam berbagai aksi kriminal seperti pencurian, penggelapan, pemerasan, dan penipuan. Kejadian terakhir dilaporkan terjadi di wilayah Bandung.</p>
   <p>Warga diimbau untuk waspada dan segera melaporkan jika menemukan informasi terkait keberadaan pelaku.</p>
-<p>Apabila ada yang melihat, dijalan, diproyek, harap hubungi 0859109819017, atau kirim informasi sebagai anonym disini
+  <p>Apabila ada yang melihat, di jalan, di proyek, harap hubungi 0859109819017, atau kirim informasi sebagai anonym 
+    <a href="https://buronan.site/form-informan.html" onclick="openPopup('https://example.com/anonim-form')" style="color: blue; text-decoration: underline;">disini</a>.
+  </p>
 </article>
+<div id="popupModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+  <div style="position:relative; width:90%; max-width:600px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+    <button onclick="closePopup()" style="position:absolute; top:5px; right:10px; background:red; color:white; border:none; border-radius:5px; padding:5px 10px; cursor:pointer;">✕</button>
+    <iframe src="" id="popupFrame" style="width:100%; height:80vh; border:none;"></iframe>
+  </div>
+</div>
 
+<script>
+  function openPopup(url) {
+    const modal = document.getElementById('popupModal');
+    const frame = document.getElementById('popupFrame');
+    frame.src = url;
+    modal.style.display = 'flex';
+  }
+
+  function closePopup() {
+    const modal = document.getElementById('popupModal');
+    const frame = document.getElementById('popupFrame');
+    frame.src = '';
+    modal.style.display = 'none';
+  }
+</script>
 </body>
 </html>
