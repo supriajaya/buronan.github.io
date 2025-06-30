@@ -23,19 +23,21 @@
 
     .profile-buttons {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
       justify-content: center;
-      margin: 20px 0;
+      gap: 6px;
+      margin: 16px 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
     }
 
     .profile-buttons button {
+      white-space: nowrap;
       background: #007BFF;
       color: white;
       border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 0.9em;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.75em;
       cursor: pointer;
       transition: background 0.3s ease;
     }
