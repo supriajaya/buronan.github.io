@@ -24,10 +24,11 @@
     .profile-buttons {
       display: flex;
       justify-content: center;
-      gap: 6px;
-      margin: 16px 0;
+      gap: 4px;
+      margin: 12px 8px;
       flex-wrap: nowrap;
       overflow-x: auto;
+      max-width: 100%;
     }
 
     .profile-buttons button {
@@ -35,11 +36,12 @@
       background: #007BFF;
       color: white;
       border: none;
-      padding: 6px 10px;
-      border-radius: 5px;
-      font-size: 0.75em;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.65em;
       cursor: pointer;
       transition: background 0.3s ease;
+      flex-shrink: 0;
     }
 
     .profile-buttons button:hover {
@@ -47,7 +49,7 @@
     }
 
     img.cover {
-      max-width: 180px;
+      max-width: 160px;
       margin-bottom: 10px;
       border-radius: 10px;
       box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
@@ -73,7 +75,7 @@
       transition: transform 0.8s ease;
       backface-visibility: hidden;
       overflow-y: auto;
-      padding: 15px;
+      padding: 12px;
       box-sizing: border-box;
       font-size: 0.85em;
     }
@@ -93,11 +95,11 @@
 
     h2 {
       margin-top: 0;
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
 
     p {
-      font-size: 0.95em;
+      font-size: 0.9em;
       line-height: 1.5;
     }
 
@@ -106,8 +108,8 @@
       bottom: 0;
       width: 100%;
       text-align: center;
-      padding: 10px 0;
-      font-size: 0.8em;
+      padding: 8px 0;
+      font-size: 0.75em;
       background: #eee;
       color: #555;
       border-top: 1px solid #ccc;
