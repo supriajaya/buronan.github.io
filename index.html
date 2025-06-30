@@ -2,137 +2,202 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
+  <title>KRIMINAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MALING DI PROYEK</title>
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: lightgray;
-      color: white;
-    }
-    .hero-section {
-      position: relative;
-      height: 10vh;
-      background: url('https://aryafoods.shop/fotomaling.jpg') no-repeat center center/cover;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      min-height: 500vh;
+      background: #f7f7f7;
+      font-family: sans-serif;
+      padding-top: 20px;
     }
-    .hero-section .username {
-      font-size: 24px;
-      font-weight: bold;
-      color: black;
-      text-shadow: 1px 1px 2px white;
-    }
-    .scroll-gallery {
-      overflow-x: auto;
+
+    .profile-buttons {
       display: flex;
-      gap: 10px;
-      padding: 10px 15px;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
     }
-    .scroll-item {
-      flex: 0 0 auto;
-      background-color: #222;
+
+    .profile-buttons button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .profile-buttons button:hover {
+      background: #0056b3;
+    }
+
+    img.cover {
+      max-width: 180px;
+      margin-bottom: 10px;
       border-radius: 10px;
-      padding: 8px;
-      width: 200px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
     }
-    .scroll-item h4, .scroll-item p {
-      margin: 5px 0;
-      color: #fff;
+
+    .book {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      height: 350px;
+      perspective: 1200px;
+      touch-action: pan-y;
     }
-    .scroll-item a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
-    .center-img {
-      text-align: center;
-      padding-bottom: 15px;
-    }
-    .center-img img {
-      width: 180px;
-      border-radius: 10px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.4);
-    }
-    .box-white {
-      background-color: white;
-      color: black;
-      border-radius: 10px;
-      margin: 0 10px 15px;
-      padding: 10px;
-    }
-    h3 {
-      text-align: center;
-      margin-top: 0;
-    }
-    pre.code-box {
-      background: #111;
-      border: 1px solid #333;
-      padding: 10px;
-      border-radius: 8px;
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      transform-origin: left center;
+      transition: transform 0.8s ease;
+      backface-visibility: hidden;
       overflow-y: auto;
-      max-height: 250px;
-      font-size: 11px;
-      color: #eee;
-      white-space: pre-wrap;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 0.85em;
     }
-    .link-box {
-      text-align: center;
-      font-size: 18px;
+
+    .page.flipped {
+      transform: rotateY(-180deg);
+      z-index: 0;
     }
-    .link-box a {
-      color: blue;
-      text-decoration: none;
-      font-weight: bold;
+    
+   
+    .page:nth-child(1) { z-index: 7; }
+    .page:nth-child(2) { z-index: 6; }
+    .page:nth-child(3) { z-index: 5; }
+    .page:nth-child(4) { z-index: 4; }
+    .page:nth-child(5) { z-index: 3; }
+    .page:nth-child(6) { z-index: 2; }
+    .page:nth-child(7) { z-index: 1; }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.3em;
+    }
+    p {
+      font-size: 0.95em;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
-  <section class="hero-section">
-    <div class="username">MALING</div>
-  </section>
 
-  <div class="scroll-gallery">
-    <div class="scroll-item">
-      <h4>UJANG CHAERUDIN</h4>
-      <p><a href="https://buronan.site/pelaku-1.html">Bekasi</a></p>
+  <div class="profile-buttons">
+    <button onclick="window.location.href='https://'">PROFIL UJANG CHAERUDIN</button>
+    <button onclick="window.location.href='https:'">PROFIL BAGUS IRWAN KHALIFI</button>
+    <button onclick="window.location.href='https://'">LAPORAN POLISI</button>
+   
+  </div>
+
+  <img src="https://buronan.site/foto/duo-maling.jpg" alt="Cover Buku" class="cover" />
+
+  <div class="book" id="book">
+<div class="page">
+      <h2>📘 KRONOLOGI</h2>
+      <p>Ujang khaerudin dan Bagus Irwan Khalifi ke bandung untuk bekerja
+      Setiba nya dilokasi Ongkos kedua pelaku kita ganti cash Rp 200.000
+      <p>Terhitung aktif kerja selama 3hari, dan selama 3hari tersebut kita beri kasbon Rp 500.000
+      dan makan rokok kopi gorengan dll kita kasih cuma cuma</p>
+      <p>Kebetulan lokasi kosan awal membutuhkan alat transportasi dan biaya gocar untuk ujang dan irwan terhitung habis Rp 300.000</p>
+      <p>Mereka meminta kosan dekat proyek jadi kita tempatkan kosan baru dengan akses warung</p>
+      <p>Pengeluaran untuk kebutuhan ujang dan irwan terhitung total <strong>Rp 1.500.000</strong> (berikut hutang yang mereka tinggalkan diwarung setelah mencuri)</p>
     </div>
-    <div class="scroll-item">
-      <h4>BAGUS IRWAN KHALIFI</h4>
-      <p><a href="#">Banten</a></p>
-    </div></div>
-  
-  <div class="center-img">
-    <img src="https://aryafoods.shop/fotomaling.jpg" alt="Foto Maling">
-  </div>
 
-  <div class="box-white link-box">
-    <a href="https://buronan.site/form-informan.html" target="_blank">KIRIM INFORMASI</a>
-  </div>
+ <div class="page">
+      <p>Kamis malam 05 juni 2025 sekitar pukul 20:00, Saya ada keperluan ke cibaduyut dan kedua pelaku di kosan sumarecon bandung beserta alat alat kerja dan matrial kantor</p>
+      <p>Jumat pagi 06 juni 2025 saya kembali ke kosan sumarecon sekitar pukul 08:00 dan menemukan kosan kosong, seluruh alat alat kerja berikut matrial kantor tidak ada</p>
+      <p>Dan menurut saksi mata kedua pelaku keluar dari kosan sekitar pukul 07:00 membawa ransel dan karung yang diduga berisi alat alat kerja dan matrial kantor</p>
+    </div>
 
-  <div class="box-white">
-    <h3>Dasar Hukum</h3>
-    <pre class="code-box" id="htm2">
-<li><strong>Pasal 362 KUHP:</strong> Pencurian
-Barang siapa mengambil barang milik orang lain untuk dimiliki secara melawan hukum, dihukum karena pencurian.</li>
-<li><strong>Pasal 368 KUHP:</strong> Pemerasan
-Memaksa orang lain dengan kekerasan atau ancaman kekerasan untuk memberikan barang, dihukum karena pemerasan.</li>
-<li><strong>Pasal 374 KUHP:</strong> Penggelapan
-Dilakukan oleh orang yang karena pekerjaan atau kepercayaan menguasai barang, dihukum maksimal 5 tahun.</li>
-<li><strong>Pasal 378 KUHP:</strong> Penipuan
-Menggunakan tipu muslihat atau kebohongan untuk menggerakkan orang lain menyerahkan barang, dihukum maksimal 4 tahun.</li>
-    </pre>
-    <button onclick="copyDOS('htm2')">Salin</button>
-  </div>
+<div class="page">
+      <h2>GAJI</h2>
+      <p>System gaji pada umumnya hari sabtu ntah seminggu sekali maupun dua minggu sekali</p>
+      <p>Namun pada hari jumat pagi sekitar pukul 07:00 kedua pelaku kabur membawa semua alat alat kerja dan matrial kantor</p>
+      <p>Pelaku beralasan alat alat senilai <strong> Rp 4.000.000</strong> disita karena gaji mereka yang jika dihitung : UJANG tersisa <strong>Rp 150.000</strong> dan IRWANsisa <strong>Rp 50.000</strong>
+      <p>Note: kerja 3hari, ongkos dikasih 200.000, kasbon dikasih 500.000, makan rokok kopi gorengan dan uang cuma dikasih</p>
+      <p>Jadi yang terjadi disini bukan gaji tidak dibayar tapi :
+<p><strong>"Murni tindak kriminal pencurian"</strong></p>
+    </div>
+
+<div class="page">
+  <p>Kedua pelaku juga menuntut agar mentransfer sejumlah uang dengan caci maki
+  <p>Pelaku melakukan muslihat seolah siap bertemu ditempat berbeda beda namun pada ujungnya kembali pada tuntutan agar saya mentransfer sejumlah uang
+</div>
+
+<div class="page">
+      <h2>🌐 LAPORAN POLISI</h2>
+      <p>Sebelumnya kita sudah bersedia mediasi mengingat pelaku memiliki anak istri, kasian jika harus diseret kepenjara, namun kedua pelaku semakin menjadi jadi, akhirnya kita laporkan secara resmi ke polsek Gedebage Bandung</p>
+      <p>Agar ditindak sesuai hukum yang berlaku di negara kesatuan republik indonesia</p>
+</div>
+
+<div class="page">
+      <h2>✍️ DASAR HUKUM</h2>
+      <p>1. Pencurian – Pasal 362 KUHP<br>
+      "Barang siapa mengambil sesuatu barang, yang seluruhnya atau sebagian kepunyaan orang lain, dengan maksud untuk dimiliki secara melawan hukum, dihukum karena pencurian, ...."</p>
+      <p>2. Penggelapan – Pasal 372 KUHP<br>
+      "Barang siapa dengan sengaja dan melawan hukum memiliki barang sesuatu yang seluruhnya atau sebagian adalah kepunyaan orang lain dan yang ada padanya bukan karena kejahatan, dihukum karena penggelapan, ....."</p>
+     
+</div>
+
+
+
+<div class="page">
+      <h2></h2>
+      <p>3. Pemerasan – Pasal 368 KUHP ayat (1)<br>
+      "Barang siapa dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, memaksa orang lain dengan kekerasan atau ancaman kekerasan untuk memberikan sesuatu barang, yang sebagian atau seluruhnya milik orang itu atau milik orang lain, atau supaya orang itu memberikan hutang ataupun menghapuskan piutang, dihukum karena pemerasan, ....."</p>
+      <p>4. Penipuan – Pasal 378 KUHP<br>
+      "Barang siapa dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, dengan memakai nama palsu atau martabat palsu, dengan tipu muslihat, ataupun rangkaian kebohongan, menggerakkan orang lain untuk menyerahkan sesuatu barang, atau supaya memberi hutang maupun menghapuskan piutang, dihukum karena penipuan, ...."</p>
+</div>
+
 
   <script>
-    function copyDOS(id) {
-      const text = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Kode berhasil disalin!');
-      });
+    const pages = document.querySelectorAll('.page');
+    let current = 0;
+
+    function flipForward() {
+      if (current < pages.length) {
+        pages[current].classList.add('flipped');
+        current++;
+      }
     }
+
+    function flipBackward() {
+      if (current > 0) {
+        current--;
+        pages[current].classList.remove('flipped');
+      }
+    }
+
+    let startX = 0;
+    document.getElementById('book').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.getElementById('book').addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      let deltaX = endX - startX;
+      if (Math.abs(deltaX) > 50) {
+        deltaX < 0 ? flipForward() : flipBackward();
+      }
+    });
+
+    document.getElementById('book').addEventListener('click', flipForward);
   </script>
 </body>
 </html>
