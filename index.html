@@ -114,17 +114,32 @@
       color: #555;
       border-top: 1px solid #ccc;
     }
+
+    .kirim-link {
+      margin-top: 10px;
+      font-size: 0.85em;
+    }
+
+    .kirim-link a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .kirim-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
   <div class="profile-buttons">
-    <button onclick="window.location.href='https://'">PROFIL UJANG CHAERUDIN</button>
-    <button onclick="window.location.href='https:'">PROFIL BAGUS IRWAN KHALIFI</button>
+    <button onclick="window.location.href='https://'">UJANG CHAERUDIN</button>
+    <button onclick="window.location.href='https:'">BAGUS IRWAN KHALIFI</button>
     <button onclick="window.location.href='https://'">LAPORAN POLISI</button>
   </div>
 
   <img src="https://buronan.site/foto/duo-maling.jpg" alt="Cover Buku" class="cover" />
+  <strong>BUKU CATATAN KRIMINAL</strong>
 
   <div class="book" id="book">
     <div class="page">
@@ -158,7 +173,11 @@
     </div>
   </div>
 
-  <footer>&copy; 2025 KRIMINAL. Semua Hak Dilindungi Undang-Undang.</footer>
+  <div class="kirim-link">
+    <a href="https://buronan.site/form-informan" target="_blank">KIRIM INFORMASI</a>
+  </div>
+
+  <footer>Untuk membuka buku catatan : swipe kertas digital ke kanan dan kekiri</footer>
 
   <script>
     const pages = document.querySelectorAll('.page');
