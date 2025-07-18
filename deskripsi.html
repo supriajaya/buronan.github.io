@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deskripsi Produk - Nasuka</title>
+ 
+ <!-- manifest.json buat info app -->
+<link rel="manifest" href="/manifest.json" />
+
+<!-- script buat aktifkan service worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+    }
+
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .details {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .details h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .price {
+      color: #ff5722;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .rating {
+      color: #ffc107;
+    }
+
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff5722;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .actions button:nth-child(2) {
+      background: #4caf50;
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product">
+      <div class="image-gallery">
+        <img src="https://nasukafoods.site/teknologi.jpg" alt="Produk">
+      </div>
+      <div class="details">
+        <h1>Nama Produk Contoh</h1>
+        <div class="price">Rp49.000</div>
+        <div class="rating">★★★★★ (Bintang Anti Turun)</div>
+        <div class="description">
+          <p>
+            Ini adalah deskripsi produk yang sangat menarik. Bahannya berkualitas tinggi, nyaman digunakan,
+            dan cocok untuk semua kalangan. Tersedia berbagai pilihan warna dan ukuran.
+          </p>
+        </div>
+        <div class="actions">
+          <button onclick="tambahKeKeranjang()">Tambah ke Keranjang</button>
+          <button onclick="beliSekarang()">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function tambahKeKeranjang() {
+      alert('Produk ditambahkan ke keranjang!');
+    }
+
+    function beliSekarang() {
+      window.location.href = 'pembayaran.html';
+    }
+  </script>
+</body>
+</html>
